@@ -4,6 +4,12 @@ import pytest
 
 import pension
 
+fileName = "result_table.txt"
+
+def setup_module(module):
+    table = open(fileName, "w")
+    table.writelines("age | salary | years_teaching | app_date\n")
+
 
 @pytest.mark.parametrize(
     'age, salary, years_teaching, app_date',
@@ -13,4 +19,5 @@ import pension
 )
 def test_pension_result(age, salary, years_teaching, app_date):
     result = pension.calculate_annual_pension(age, salary, years_teaching, app_date)
-    assert result > 0
+    table = open(fileName, "a")
+    table.write("{} | {} | {} | {} |\n".format(age, salary, years_teaching, age))

@@ -11,4 +11,6 @@ def calculate_annual_pension(age: int, salary: int, years_teaching: int, app_dat
     else:
         return 0
     adjusted_salary = salary * multiplier if salary <= 90000 else (90000 * multiplier) + (salary - 90000 * 1.015)
-    return (years_teaching / 100) * adjusted_salary
+    result = (years_teaching / 100) * adjusted_salary
+    print(result)
+    return result
