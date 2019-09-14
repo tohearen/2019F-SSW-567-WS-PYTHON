@@ -1,2 +1,0 @@
-age | salary | years_teaching | app_date
-63 | 80000 | 20 | 63 |
