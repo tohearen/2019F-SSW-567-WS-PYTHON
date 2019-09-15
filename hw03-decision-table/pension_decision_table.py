@@ -14,6 +14,7 @@ def setup_module(module):
 
 
 def teardown_module(module):
+    print('\n\nRESULTS:')
     print(table)
     open("pension_table.html", "w").write(table.get_html_string())
 
